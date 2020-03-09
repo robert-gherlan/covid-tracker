@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Confirmed Cases</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div th:insert="fragments/css"></div>
+</head>
+
+<body>
+	<div th:insert="fragments/navbar"></div>
+
+	<main role="main" class="container">
+		<div class="jumbotron">
+			<h1 th:text="${stats.totalReportedCases}"></h1>
+			<p class="lead">Total confirmed cases reported as of today</p>
+			<hr class="my-4" />
+			<p>
+				<span>New confirmed cases reported since previous day </span> <strong><span
+					th:text="${stats.totalNewCases}"></span></strong>
+			</p>
+		</div>
+
+		<div th:insert="fragments/table/covid-cases"></div>
+	</main>
+
+	<div th:insert="fragments/footer"></div>
+</body>
+
+</html>

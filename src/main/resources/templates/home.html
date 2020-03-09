@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Confirmed Cases</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta th:insert="fragments/css"></meta>
+</head>
+
+<body>
+	<div th:insert="fragments/navbar"></div>
+
+	<main role="main" class="container">
+
+		<div class="jumbotron">
+			<h3>Coronavirus disease 2019 (COVID-19) is an infectious disease
+				caused by severe acute respiratory syndrome coronavirus 2 (SARS
+				coronavirus 2, or SARS-CoV-2),a virus closely related to the SARS
+				virus. The disease was discovered and named during the 2019–20
+				coronavirus outbreak. Those affected may develop a fever, dry cough,
+				fatigue, and shortness of breath. A sore throat, runny nose or
+				sneezing is less common. While the majority of cases result in mild
+				symptoms, some can progress to pneumonia and multi-organ failure.</h3>
+		</div>
+
+		<div class="alert alert-primary" role="alert">
+			The intent of this application is to displaying in real time the
+			COVID-19 cases based on data extracted from this <a
+				href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series">link</a>.
+		</div>
+
+	</main>
+
+	<div th:insert="fragments/footer"></div>
+</body>
+
+</html>

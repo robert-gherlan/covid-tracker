@@ -1,0 +1,31 @@
+<footer class="footer">
+	<div class="container">
+		<span class="text-muted">&copy; 2020 COVID-19 Tracker by <a
+			href="https://www.linkedin.com/in/robert-gherlan-009ab2116/">Robert
+				Gherlan</a></span>
+	</div>
+
+	<div th:insert="fragments/js"></div>
+</footer>
+
+<script>
+	$(document).ready(function() {
+		$('#covid-cases-table').DataTable();
+	});
+
+	setNavigation();
+
+	function setNavigation() {
+		var path = window.location.pathname;
+		$(".navbar a").each(function() {
+			var href = $(this).attr('href');
+			if (path === href) {
+				var activeElement = $(this).closest('li');
+				if (activeElement) {
+					activeElement.addClass('active');
+					activeElement.closest('.dropdown').addClass('active');
+				}
+			}
+		});
+	}
+</script>

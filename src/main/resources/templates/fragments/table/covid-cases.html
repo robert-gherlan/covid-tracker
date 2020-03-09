@@ -1,0 +1,22 @@
+<div class="table">
+	<table class="table table-striped table-bordered"
+		id="covid-cases-table">
+		<caption>COVID-19 cases</caption>
+		<thead>
+			<tr>
+				<th id="country">Country</th>
+				<th id="state">State</th>
+				<th id="latest-total-cases">Latest Total Cases</th>
+				<th id="difference-from-previous-day">Cases Since Last Day</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="locationStat : ${stats.locationStats}">
+				<td th:text="${locationStat.country}"></td>
+				<td th:text="${locationStat.state}"></td>
+				<td th:text="${locationStat.latestTotalCases}">0</td>
+				<td th:text="${locationStat.differenceFromPreviousDay}">0</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
