@@ -56,7 +56,7 @@ public class CovidCaseRepository {
 		return DEATHS_CASES_STATS.get();
 	}
 
-	@Scheduled(fixedDelayString = "PT15M")
+	@Scheduled(fixedDelayString = "PT4H")
 	private void populateConfirmedCasesStats() {
 		LOGGER.info("Start loading confirmed cases stats at {}", LocalTime.now());
 		List<LocationStats> data = requestData(CONFIRMED_CASES_URL);
@@ -64,7 +64,7 @@ public class CovidCaseRepository {
 		LOGGER.info("End loading {} confirmed cases stats at {}", data.size(), LocalTime.now());
 	}
 
-	@Scheduled(fixedDelayString = "PT15M")
+	@Scheduled(fixedDelayString = "PT4H")
 	private void populateRecoveredCasesStats() {
 		LOGGER.info("Start loading recovered cases stats at {}", LocalTime.now());
 		List<LocationStats> data = requestData(RECOVERED_CASES_URL);
@@ -72,7 +72,7 @@ public class CovidCaseRepository {
 		LOGGER.info("End loading {} recovered cases stats at {}", data.size(), LocalTime.now());
 	}
 
-	@Scheduled(fixedDelayString = "PT15M")
+	@Scheduled(fixedDelayString = "PT4H")
 	private void populateDeathsCasesStats() {
 		LOGGER.info("Start loading death cases stats at {}", LocalTime.now());
 		List<LocationStats> data = requestData(DEATHS_CASES_URL);
