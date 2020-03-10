@@ -4,11 +4,11 @@
 <head>
 <title>Confirmed Cases</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<div th:insert="fragments/css"></div>
+<meta th:replace="fragments/css"></meta>
 </head>
 
 <body>
-	<div th:insert="fragments/navbar"></div>
+	<div th:replace="fragments/navbar"></div>
 
 	<main role="main" class="container">
 		<div class="jumbotron">
@@ -24,7 +24,7 @@
 		<div th:insert="fragments/table/covid-cases"></div>
 	</main>
 
-	<div th:insert="fragments/footer"></div>
+	<div th:replace="fragments/footer"></div>
 </body>
 
 </html>
