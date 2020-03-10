@@ -3,11 +3,12 @@ package com.covid.controller.api;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.covid.dto.CovidCaseStatsDto;
+import com.covid.dto.DailyReportsCovidCaseStatsDto;
 import com.covid.model.LocationStats;
 import com.covid.service.CovidService;
 
@@ -22,18 +23,27 @@ public class APICovidCaseController {
 	}
 
 	@GetMapping("/confirmed")
-	public ResponseEntity<List<LocationStats>> confirmedCases() {
-		return ResponseEntity.ok(covidService.getConfiredCasesStats());
+	public ResponseEntity<CovidCaseStatsDto> confirmedCases() {
+		return mapToDto(covidService.getConfiredCasesStats());
 	}
 
 	@GetMapping("/recovered")
-	public ResponseEntity<List<LocationStats>> recoveredCases() {
-		return ResponseEntity.ok(covidService.getRecoveredCasesStats());
+	public ResponseEntity<CovidCaseStatsDto> recoveredCases() {
+		return mapToDto(covidService.getRecoveredCasesStats());
 	}
 
 	@GetMapping("/deaths")
-	public ResponseEntity<List<LocationStats>> deathsCases(Model model) {
-		return ResponseEntity.ok(covidService.getDeathCasesStats());
+	public ResponseEntity<CovidCaseStatsDto> deathsCases() {
+		return mapToDto(covidService.getDeathCasesStats());
+	}
+
+	private ResponseEntity<CovidCaseStatsDto> mapToDto(List<LocationStats> locationStats) {
+		return ResponseEntity.ok(new CovidCaseStatsDto(locationStats));
+	}
+
+	@GetMapping("/daily_reports")
+	public ResponseEntity<DailyReportsCovidCaseStatsDto> dailyReportsCases() {
+		return ResponseEntity.ok(new DailyReportsCovidCaseStatsDto(covidService.getDailyReportsCasesStats()));
 	}
 
 }

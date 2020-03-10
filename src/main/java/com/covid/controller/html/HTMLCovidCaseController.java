@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.covid.dto.CovidCaseStatsDto;
+import com.covid.dto.DailyReportsCovidCaseStatsDto;
+import com.covid.model.DailyReportsLocationStats;
 import com.covid.model.LocationStats;
 import com.covid.service.CovidService;
 
@@ -42,7 +44,18 @@ public class HTMLCovidCaseController {
 		return "deaths";
 	}
 
+	@GetMapping("/daily_reports")
+	public String dailyReportsCases(Model model) {
+		List<DailyReportsLocationStats> stats = covidService.getDailyReportsCasesStats();
+		addStatsModelAttribute(model, new DailyReportsCovidCaseStatsDto(stats));
+		return "daily_reports";
+	}
+
 	private void addStatsModelAttribute(Model model, List<LocationStats> stats) {
-		model.addAttribute("stats", new CovidCaseStatsDto(stats));
+		addStatsModelAttribute(model, new CovidCaseStatsDto(stats));
+	}
+
+	private void addStatsModelAttribute(Model model, Object object) {
+		model.addAttribute("stats", object);
 	}
 }

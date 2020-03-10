@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Daily Reports Cases</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta th:replace="fragments/css"></meta>
+</head>
+
+<body>
+	<div th:replace="fragments/navbar"></div>
+
+	<main role="main" class="container">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Total Confirmed Cases</h5>
+							<p class="card-text">
+							<h1 th:text="${stats.totalConfirmed}"></h1>
+							</p>
+							<a th:href="@{/cases/confirmed}" class="btn btn-primary">Confirmed Cases</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Total Recovered Cases</h5>
+							<p class="card-text">
+							<h1 th:text="${stats.totalRecovered}"></h1>
+							</p>
+							<a th:href="@{/cases/recovered}" class="btn btn-primary">Recovered Cases</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Total Deaths Cases</h5>
+							<p class="card-text">
+							<h1 th:text="${stats.totalDeaths}"></h1>
+							</p>
+							<a th:href="@{/cases/deaths}" class="btn btn-primary">Deaths Cases</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div th:replace="fragments/table/daily-reports-covid-cases"></div>
+	</main>
+
+	<div th:replace="fragments/footer"></div>
+</body>
+
+</html>

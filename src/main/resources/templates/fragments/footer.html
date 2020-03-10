@@ -13,21 +13,25 @@
 		$('#covid-cases-table').DataTable({
 			"order" : [ 1, "desc" ]
 		});
-	});
 
-	setNavigation();
-
-	function setNavigation() {
-		var path = window.location.pathname;
-		$(".navbar a").each(function() {
-			var href = $(this).attr('href');
-			if (path === href) {
-				var activeElement = $(this).closest('li');
-				if (activeElement) {
-					activeElement.addClass('active');
-					activeElement.closest('.dropdown').addClass('active');
-				}
-			}
+		$('#daily-reports-covid-cases-table').DataTable({
+			"order" : [ 1, "desc" ]
 		});
-	}
+
+		setNavigation();
+
+		function setNavigation() {
+			var path = window.location.pathname;
+			$(".navbar a").each(function() {
+				var href = $(this).attr('href');
+				if (path === href) {
+					var activeElement = $(this).closest('li');
+					if (activeElement) {
+						activeElement.addClass('active');
+						activeElement.closest('.dropdown').addClass('active');
+					}
+				}
+			});
+		}
+	});
 </script>

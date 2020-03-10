@@ -20,7 +20,9 @@ public class URLRepository {
 			HttpClient client = HttpClient.newHttpClient();
 			HttpRequest request = HttpRequest.newBuilder(URI.create(url)).build();
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-			return Optional.ofNullable(response.body());
+			if (response.statusCode() == 200) {
+				return Optional.ofNullable(response.body());
+			}
 		} catch (Exception e) {
 			LOGGER.error("Failed to retrieve the data.", e);
 		}

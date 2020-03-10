@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.covid.model.DailyReportsLocationStats;
 import com.covid.model.LocationStats;
 import com.covid.repository.CovidCaseRepository;
 
@@ -26,5 +27,9 @@ public class CovidService {
 
 	public List<LocationStats> getDeathCasesStats() {
 		return covidRepository.getDeathCasesStats();
+	}
+
+	public List<DailyReportsLocationStats> getDailyReportsCasesStats() {
+		return covidRepository.getDailyReportsCasesStats();
 	}
 }

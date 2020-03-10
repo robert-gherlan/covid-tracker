@@ -1,0 +1,24 @@
+<div class="table">
+	<table class="table table-striped table-bordered"
+		id="daily-reports-covid-cases-table">
+		<caption>Daily Reports COVID-19 Cases</caption>
+		<thead>
+			<tr>
+				<th id="country">Country</th>
+				<th id="confirmed">Confirmed</th>
+				<th id="recovered">Recovered</th>
+				<th id="deaths">Deaths</th>
+				<th id="last-update">Last Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="locationStat : ${stats.dailyReportsLocationStats}">
+				<td th:text="${locationStat.country}"></td>
+				<td th:text="${locationStat.confirmed}">0</td>
+				<td th:text="${locationStat.recovered}">0</td>
+				<td th:text="${locationStat.deaths}">0</td>
+				<td th:text="${locationStat.lastUpdate}">0</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
