@@ -10,7 +10,9 @@
 
 <script>
 	$(document).ready(function() {
-		$('#covid-cases-table').DataTable();
+		$('#covid-cases-table').DataTable({
+			"order": [[ 1, "desc" ]]
+		});
 	});
 
 	setNavigation();
