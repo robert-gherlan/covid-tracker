@@ -4,11 +4,11 @@
 <head>
 <title>COVID-19 Tracker</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta th:insert="fragments/css"></meta>
+<meta th:replace="fragments/css"></meta>
 </head>
 
 <body>
-	<div th:insert="fragments/navbar"></div>
+	<div th:replace="fragments/navbar"></div>
 
 	<main role="main" class="container">
 
@@ -31,7 +31,7 @@
 
 	</main>
 
-	<div th:insert="fragments/footer"></div>
+	<div th:replace="fragments/footer"></div>
 </body>
 
 </html>

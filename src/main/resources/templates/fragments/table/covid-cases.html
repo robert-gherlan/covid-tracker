@@ -5,7 +5,7 @@
 		<thead>
 			<tr>
 				<th id="country">Country</th>
-				<th id="state">State</th>
+				<!--<th id="state">State</th>-->
 				<th id="latest-total-cases">Latest Total Cases</th>
 				<th id="difference-from-previous-day">Cases Since Last Day</th>
 			</tr>
@@ -13,7 +13,7 @@
 		<tbody>
 			<tr th:each="locationStat : ${stats.locationStats}">
 				<td th:text="${locationStat.country}"></td>
-				<td th:text="${locationStat.state}"></td>
+				<!--<td th:text="${locationStat.state}"></td>-->
 				<td th:text="${locationStat.latestTotalCases}">0</td>
 				<td th:text="${locationStat.differenceFromPreviousDay}">0</td>
 			</tr>

@@ -4,11 +4,11 @@
 <head>
 <title>Recovered Cases</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta th:insert="fragments/css"></meta>
+<meta th:replace="fragments/css"></meta>
 </head>
 
 <body>
-	<div th:insert="fragments/navbar"></div>
+	<div th:replace="fragments/navbar"></div>
 
 	<main role="main" class="container">
 		<div class="jumbotron">
@@ -21,11 +21,11 @@
 			</p>
 		</div>
 
-		<div th:insert="fragments/table/covid-cases"></div>
+		<div th:replace="fragments/table/covid-cases"></div>
 		</div>
 	</main>
 
-	<div th:insert="fragments/footer"></div>
+	<div th:replace="fragments/footer"></div>
 </body>
 
 </html>
